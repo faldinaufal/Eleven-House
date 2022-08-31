@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.get("/kosan", verifyToken, getRumahKos)
 router.get("/users", verifyToken, getUsers)
-router.post("/users", Register)
+router.post("/register", Register)
 router.post("/login", Login)
 router.get("/token", RefreshToken)
 router.delete("/logout", Logout)
