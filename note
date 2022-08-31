@@ -1,0 +1,26 @@
+Aplikasi Kos-kosan
+
+Aplikasi kos-kosan pada umumnya tujuan nya fokus pada pengguna atau user nya dimana seperti membantu user untuk mencari kos terdekat. Tetapi aplikasi kos-kosan ini bertujuan untuk para pemilik kos. Dimana fungsi fungsi nya dapat membantu pemilik kos dalam melakukan berbagai hal fungsi dan hubungan antara pemilik kos dengan penghuni kos.
+
+Alasand dari pembuatan aplikasi ini adalah, ada nya pemilik kos yang memiliki lebih dari 1 rumah kos. Bahkan ada yang memiliki hingga 5 lebih rumah kos yang tersebar di seluruh kota. Lokasi lokasi kos yang umumnya berada di sekitar lingkungan kampus. Dan jika pemilik kos memiliki banyak kosan di berbagai lingkungan kampus yang tersebar di seluruh kota maka akan kesulitan dalam melakukan monitoring kosannya. Dan juga ada nya beberapa kejadian adanya tindakan yang tidak benar di lakukan penjaga kosan seperti menaikan harga kosan dimana selisih harga tersebut di simpan oleh penjaga kos tersebut. padahal penjaga kos telah di gaji oleh pemilik. dari beberapa masalah tersebut lah landasan membuat aplikasi ini.
+
+Fungsi - fungsi nya tersebut di jabarkan sebagai berikut :
+
+- Tenant / penghuni kos
+  -mendaftar dan menerima info tentang kamar yang ingin di tempati
+  -dapat memilih kamar yang di inginkan
+  -penghuni kos dapat membayar uang kos langsung dari aplikasi ini
+  -ada nya notifikasi tentang waktu pembayaran uang kos yang telah jatuh tempo.
+  -adanya fitur chat atau contact person penjaga kosan dan pemilik kosan yang bisa membantu penghuni kos untuk menghubungi penjaga kosan atau pemilik dalam keadaan tertentu
+  -setelah 10 hari jatuh tempo jika penghuni kos tidak membayar uang kos maka akun akan di suspend sementara hingga di aktifkan kembali oleh admin atau sub-admin setelah membayar.
+
+-Sub-admin / Penjaga kosan
+  -Mengkonfirmasi kamar yang telah di pilih oleh user setelah menerima notifikasi pembayaran telah berhasil pada saat pertama kali masuk kos.
+  -Dapat memberikan pesan / notifikasi pengingat untuk user agar membayar uang kos ketika telah jatuh tempo.
+  -dapat memberikan pesan berupa broadcast keseluruh penghuni kos atau individu.
+  -Kos yang dapat di akses hanya kosan yg terdaftar pada akun sub-admin
+
+-Admin / pemilik kos
+  -Dapat memengakses semua info kos kosan yang ada.
+  -Memiliki semua fitur sub-admin.
+  -mekonfirmasi pembayaran
