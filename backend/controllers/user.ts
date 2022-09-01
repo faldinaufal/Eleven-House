@@ -3,6 +3,7 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import dotenv from 'dotenv';
 import { Request, Response } from 'express';
+import { send } from 'process';
 
 
 
@@ -32,8 +33,8 @@ export const Register = async (req:any, res:any) => {
       nohandphone: nohandphone
     })
     res.json({message: "Anda Berhasil Mendaftar"})
-  } catch (error) {
-    console.log(error)
+  } catch (error:any) {
+    return res.status(409).json({message: "Email Telah Digunakan"})
   }
 }
 

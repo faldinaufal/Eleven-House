@@ -7,9 +7,13 @@ import cors from "cors"
 require("dotenv").config()
 const app = express()
 
-app.use(cors({credentials: true, origin: 'http://localhost:3000'}))
-app.use(express.json())
 app.use(cookieParser())
+app.use(cors({
+  credentials: true, 
+  origin: ['http://localhost:3000'], 
+  methods: ["GET", "POST", "UPDATE", "DELETE"]
+}))
+app.use(express.json())
 app.use(router)
 
 KosanDB.sync().then(() =>{

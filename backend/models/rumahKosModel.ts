@@ -7,7 +7,7 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
 export class RumahKos extends Model {
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
   namakos!: string
 
@@ -16,6 +16,18 @@ export class RumahKos extends Model {
     allowNull: true,
   })
   alamatkos!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  image!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  imageUrl!: string;
 }
 
 @Table({
@@ -26,7 +38,7 @@ export class RumahKos extends Model {
 export class KamarKos extends Model {
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
   namakamar!: string
 
@@ -35,4 +47,16 @@ export class KamarKos extends Model {
     allowNull: true,
   })
   deskripsikamar!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  image!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  imageUrl!: string;
 }

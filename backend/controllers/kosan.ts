@@ -1,6 +1,7 @@
 import { RumahKos } from '../models/rumahKosModel';
+import { Request, Response } from 'express';
 
-const getRumahKos = async(req:any,res:any) => {
+export const getRumahKos = async(req:Request, res:Response) => {
   try {
     const rumahkos = await RumahKos.findAll();
     res.json(rumahkos)
@@ -9,4 +10,14 @@ const getRumahKos = async(req:any,res:any) => {
   }
 }
 
-export default getRumahKos
+export const inputRumahKos = async (req:Request, res:Response) => {
+
+}
+
+export const updateRumahKos = async (req:Request, res:Response) => {
+
+}
+
+export const deleteRumahKos = async (req:Request, res:Response) => {
+
+}

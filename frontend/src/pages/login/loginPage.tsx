@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { Button, Input } from '@material-tailwind/react'
 import { useNavigate } from 'react-router-dom'
+import { request } from 'http'
 
 const LoginPage = () => {
   const [email, setEmail] = useState('')
@@ -45,12 +46,14 @@ const LoginPage = () => {
         </div>
         <Button onClick={Authentication} className='mt-5'>Login</Button>
         <p className='text-red-600 font-semibold font-sourcecodepro mt-4'>{msg}</p>
-        <div className='px-16 pb-12 items-center mt-20'>
+        <div className='px-16 pb-12 items-center mt-12'>
           <div className='my-3 font-breeserif text-md'>
             <p>Silahkan Klik Tombol Register Untuk Mendaftar</p>
           </div>
           <div>
-            <Button className='bg-blue-gray-200 text-black'>Register</Button>
+            <a href="/register">
+              <Button className='bg-blue-gray-200 text-black'>Register</Button>
+            </a>
           </div>
         </div>
       </div>

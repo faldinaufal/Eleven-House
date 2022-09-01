@@ -1,7 +1,6 @@
 import { Users } from '../models/UsersModel';
 import jwt from "jsonwebtoken"
 import { Request, Response } from 'express';
-import cookieParser from 'cookie-parser';
 
 export const RefreshToken = async (req:Request, res:Response) => {
   try {

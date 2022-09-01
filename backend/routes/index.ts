@@ -1,8 +1,7 @@
 import express from "express";
-import getRumahKos from "../controllers/kosan"
+import { getRumahKos } from "../controllers/kosan";
 import { Register, getUsers, Login, Logout } from '../controllers/user';
-import { verifyToken } from "../middleware/verifyToken";
-import { RefreshToken } from "../controllers/refreshToken";
+import { verifyToken, RefreshToken } from "../middleware/verifyToken";
 
 const router = express.Router()
 
