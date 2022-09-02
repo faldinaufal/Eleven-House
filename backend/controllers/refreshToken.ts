@@ -5,7 +5,6 @@ import { Request, Response } from 'express';
 export const RefreshToken = async (req:Request, res:Response) => {
   try {
     const refreshToken = req.cookies.refreshToken
-    console.log(req.cookies)
     if(!refreshToken) return res.sendStatus(401)
     const user = await Users.findAll({
       where: {
