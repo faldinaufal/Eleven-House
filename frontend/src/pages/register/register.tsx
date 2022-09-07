@@ -42,7 +42,7 @@ const Register = () => {
           <div className='text-left font-sourcecodepro py-1'>
             <label>Nama Lengkap</label>
             <div className='pt-1'>
-              <Input label="Nama Lengkap" value={nama} onChange={(event) => setNama(event.target.value)}/>
+                
             </div>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
