@@ -13,7 +13,8 @@ module.exports = withMT ({
       fontFamily: {
         pacifico : ['Pacifico'],
         sourcecodepro : ['Source Code Pro'],
-        breeserif : ['Bree Serif']
+        breeserif : ['Bree Serif'],
+        rubik : ['Rubik']
       },
       backgroundImage: {
         'background' : "url('/src/media/images/bg-1.jpg');" 

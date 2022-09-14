@@ -19,8 +19,8 @@ const Nav = () => {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="/login" className="flex items-center text-lg">
-          Login
+        <a href="/profil" className="flex items-center text-lg">
+          Profil
         </a>
       </Typography>
       <Typography
@@ -29,8 +29,8 @@ const Nav = () => {
         color="white"
         className="p-1 font-normal"
       >
-        <a href="/register" className="flex items-center text-lg">
-          Register
+        <a href="/home" className="flex items-center text-lg">
+          Logout
         </a>
       </Typography>
     </ul>
