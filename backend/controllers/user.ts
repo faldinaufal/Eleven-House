@@ -46,7 +46,7 @@ export const Login = async (req:Request, res:Response) => {
       }
     })
     const match = await bcrypt.compare(req.body.password, user[0].password)
-    if(!match) return res.status(400).json({message: "Password Salah"})
+    if(!match) return res.status(400).json({message: "Email atau Password Salah"})
     const userId = user[0].id
     const name = user[0].nama
     const email = user[0].email
@@ -67,7 +67,7 @@ export const Login = async (req:Request, res:Response) => {
     })
     res.json({accessToken})
   } catch(error) {
-    res.status(404).json({message: "Email tidak ditemukan"})
+    res.status(404).json({message: "Email atau Password Salah"})
   }
 }
 

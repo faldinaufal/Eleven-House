@@ -31,7 +31,7 @@ const Register = () => {
   }
 
   return (
-    <div className='md:container md:max-w-lg bg-gradient-to-br from-white to-cyan-200 items-center text-center rounded-tl-3xl rounded-br-3xl mt-28'>
+    <div className='md:container md:max-w-lg bg-gradient-to-br from-gray-300 via-white to-gray-400 items-center text-center rounded-tl-3xl rounded-br-3xl mt-28'>
       <div className='py-10 font-pacifico text-4xl'>
         <h2>Eleven House</h2>
       </div>
@@ -40,32 +40,27 @@ const Register = () => {
             <label className='flex font-breeserif pb-4'>Form Registrasi</label>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
-            <label>Nama Lengkap</label>
-            <div className='pt-1'>
-                
+            <div className='pt-3'>
+              <Input label="Nama Lengkap" value={email} onChange={(event) => setNama(event.target.value)}/>
             </div>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
-            <label>Email</label>
-            <div className='pt-1'>
+            <div className='pt-3'>
               <Input label="Email" value={email} onChange={(event) => setEmail(event.target.value)}/>
             </div>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
-            <label>Password</label>
-            <div className='pt-1'>
+            <div className='pt-3'>
               <Input type="password" label="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
             </div>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
-            <label>Konfirmasi Password</label>
-            <div className='pt-1'>
-              <Input type="password" label="Password" value={confPassword} onChange={(event) => setConfPassword(event.target.value)}/>
+            <div className='pt-3'>
+              <Input type="password" label="Konfirmasi Password" value={confPassword} onChange={(event) => setConfPassword(event.target.value)}/>
             </div>
           </div>
           <div className='text-left font-sourcecodepro py-1'>
-            <label>Nomor Handphone</label>
-            <div className='pt-1'>
+            <div className='pt-3'>
               <Input label="No. Handphone" value={nohandphone} onChange={(event) => setNohandphone(event.target.value)}/>
             </div>
           </div>

@@ -14,6 +14,9 @@ module.exports = withMT ({
         pacifico : ['Pacifico'],
         sourcecodepro : ['Source Code Pro'],
         breeserif : ['Bree Serif']
+      },
+      backgroundImage: {
+        'background' : "url('/src/media/images/bg-1.jpg');" 
       }
     }
   },
