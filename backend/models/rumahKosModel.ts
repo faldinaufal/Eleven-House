@@ -1,4 +1,5 @@
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, ForeignKey, BelongsTo, HasMany, PrimaryKey, HasOne } from "sequelize-typescript";
+import { Users } from "./UsersModel";
 
 @Table({
   timestamps: false,
@@ -7,7 +8,8 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
 export class RumahKos extends Model {
   @Column({
     type: DataType.STRING,
-    allowNull: true,
+    allowNull: false,
+    unique: true
   })
   namakos!: string
 
@@ -21,13 +23,16 @@ export class RumahKos extends Model {
     type: DataType.STRING,
     allowNull: true,
   })
-  image!: string;
+  deskripsikos!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  imageUrl!: string;
+  image!: string;
+
+  @HasMany (() => KamarKos)
+  kamarkos!: KamarKos[]
 }
 
 @Table({
@@ -38,7 +43,8 @@ export class RumahKos extends Model {
 export class KamarKos extends Model {
   @Column({
     type: DataType.STRING,
-    allowNull: true,
+    allowNull: false,
+    unique: true
   })
   namakamar!: string
 
@@ -55,8 +61,25 @@ export class KamarKos extends Model {
   image!: string;
 
   @Column({
-    type: DataType.STRING,
+    type: DataType.BOOLEAN,
     allowNull: true,
   })
-  imageUrl!: string;
+  status!: boolean;
+
+  @ForeignKey(() => RumahKos)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: true,
+  })
+  rumahkosId!: number;
+
+  @BelongsTo(() => RumahKos)
+  rumah! : RumahKos
+
+  @ForeignKey(() => Users)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: true,
+  })
+  userId!: number;
 }

@@ -1,23 +1,33 @@
 import express from "express";
-import { getRumahKos, inputRumahKos } from '../controllers/kosan';
+import { getRumahKos, inputRumahKos, storage } from '../controllers/kosan';
 import { Register, getUsers, Login, Logout } from '../controllers/user';
-import { verifyToken, RefreshToken } from "../middleware/verifyToken";
+import { getKamarKos, peyimpanan, inputKamarKos } from '../controllers/kamarkos';
 import multer from "multer";
-
-import { storage } from "../controllers/kosan";
+import { verifyToken} from '../middleware/verifyToken';
+import { RefreshToken } from "../controllers/refreshToken";
+import { authentication } from "../middleware/authentication";
 
 const upload = multer({storage})
-
+const uploadKamar = multer({
+  storage : peyimpanan
+})
 const router = express.Router()
 
+//kosan
 router.get("/kosan", getRumahKos)
-router.post("/kosan", verifyToken, inputRumahKos)
+router.post("/kosan", upload.single('image'), verifyToken, inputRumahKos)
+router.get("/kamar", getKamarKos)
+router.post("/kamar", uploadKamar.single('image'), verifyToken, inputKamarKos)
+
+///User
 router.get("/users", verifyToken, getUsers)
 router.post("/register", Register)
-router.post("/login", Login)
-router.get("/token", verifyToken, RefreshToken)
-router.delete("/logout", Logout)
 
+//authentication
+router.post("/login", Login)
+router.delete("/logout", Logout)
+router.get("/token", RefreshToken)
+router.get("/auth", authentication)
 
 // router.post("/test", getUsersByEmail)
 

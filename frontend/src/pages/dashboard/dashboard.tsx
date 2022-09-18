@@ -1,36 +1,52 @@
-import { Navbar, ViewKosan } from '../../component'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import jwtDecode from 'jwt-decode'
-import { useNavigate } from 'react-router-dom'
+import { Navbar, NavbarLogin, ViewKosan } from '../../component'
+import { Button } from '@material-tailwind/react'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Dashboard = () => {
-  // const [nama, setNama] = useState('')
-  // const [token, setToken] = useState('')
-  // const [image, setImage] = useState('')
-  // const navigate = useNavigate()
+  const [role, setRole] = useState("")
 
-  // useEffect(() => {
-  //   refreshToken()
-  // },[])
+  useEffect(() => {
+    Auth()
+  })
 
-  // axios.post('http://localhost:4000/kosan', {
-  //   image: image
-  // })
+  const Auth = async () => {
+    try {
+      const auth = await axios.get('http://localhost:4000/auth', {withCredentials: true})
+      setRole(auth.data.role)
+    } catch (error:any) {
+      console.log(error)
+    }
+  }
+  if(role === "ADMIN" ) {
+    return (
+      <div>
+        <NavbarLogin/>
+        <div className='container'>
+          <ViewKosan/>
+        </div>
+        <div className='container relative'>
+          <div className='absolute right-0 -bottom-10'>
+            <a href="/inputKos">
+              <Button color='green'>Tambah Rumah Kos</Button>
+            </a>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
+  if(role === "USER" ) {
+    return (
+      <div>
+        <NavbarLogin/>
+        <div className='container'>
+          <ViewKosan/>
+        </div>
+      </div>
+    )
+  }
 
-  // const refreshToken = async() => {
-  //   try {
-  //     const response = await axios.get('http://localhost:4000/token', {withCredentials: true})
-  //     setToken(response.data.accessToken)
-  //     const decoded = jwtDecode(response.data.accessToken)
-  //     console.log(decoded)
-  //   } catch (error:any) {
-  //     if (error.response) {
-  //       navigate('/')
-  //     }
-  //   }
-  // }
   return (
     <div>
       <Navbar/>

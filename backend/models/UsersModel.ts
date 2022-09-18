@@ -1,4 +1,4 @@
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, PrimaryKey, IsUUID } from 'sequelize-typescript';
 
 @Table({
   timestamps: false,
@@ -8,6 +8,7 @@ export class Users extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    
   })
   nama!: string
 
@@ -31,8 +32,14 @@ export class Users extends Model {
   nohandphone!: string;
 
   @Column({
-    type: DataType.TEXT,
+    type: DataType.STRING,
     allowNull: true,
   })
-  refresh_token!: string;
+  role!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  refreshToken!: string;
 }

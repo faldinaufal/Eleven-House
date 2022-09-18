@@ -23,7 +23,7 @@ const Register = () => {
         confPassword: confPassword,
         nohandphone: nohandphone
       })
-      navigate('/')
+      navigate('/home')
     } catch (error:any) {
       if(error.response) {
         setMsg(error.response.data.message)
@@ -44,7 +44,7 @@ const Register = () => {
             </div>
             <div className='text-left font-sourcecodepro py-1'>
               <div className='pt-3'>
-                <Input label="Nama Lengkap" value={email} onChange={(event) => setNama(event.target.value)}/>
+                <Input label="Nama Lengkap" value={nama} onChange={(event) => setNama(event.target.value)}/>
               </div>
             </div>
             <div className='text-left font-sourcecodepro py-1'>
