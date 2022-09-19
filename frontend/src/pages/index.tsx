@@ -3,5 +3,7 @@ import Home from "./home/home"
 import Register from "./register/register"
 import Dashboard from "./dashboard/dashboard";
 import Inputkosan from "./inputkos/inputkos";
+import KosanPage from "./kosan/kosan"
+import Profil from "./profil/profil";
 
-export { Login, Home, Register, Dashboard, Inputkosan }
+export { Login, Home, Register, Dashboard, Inputkosan, KosanPage, Profil }

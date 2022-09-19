@@ -11,23 +11,23 @@ const Inputkosan = () => {
 
   const Auth = async () => {
     try {
-      const auth = await axios.get('http://localhost:4000/auth', {withCredentials: true})
+      const auth = await axios.get('http://localhost:4000/auth')
       setRole(auth.data.role)
     } catch (error:any) {
       console.log(error)
     }
   }
-  if(role === "ADMIN") {
+  if(role === "USER") {
     return (
-      <div>
-        <NavbarLogin/>
-        <InputKos/>
-      </div>
+      <Navigate to="/home"/>
     )
   }
-  return(
-    <Navigate to="/home"/>
 
+  return(
+    <div>
+      <NavbarLogin/>
+      <InputKos/>
+    </div>
   )
 }
 export default Inputkosan

@@ -7,7 +7,7 @@ import { Request, Response } from 'express';
 
 dotenv.config()
 
-export const getUsers = async (req:any,res:any) => {
+export const getUsers = async (req:Request,res:Response) => {
   try {
     const users = await Users.findAll({
       attributes: ['nama', 'email', "nohandphone"]
@@ -18,7 +18,20 @@ export const getUsers = async (req:any,res:any) => {
   }
 }
 
-export const Register = async (req:any, res:any) => {
+export const getSingleUsers = async (req:Request,res:Response) => {
+  const user = await Users.findOne({
+    where: {
+      nama : req.params.nama
+    }
+  })
+  if(!user) return res.status(404).json({message: "User tidak ditemukan"})
+  const nama = user.nama
+  const email = user.email
+  const nohandphone = user.nohandphone
+  res.json({nama, email, nohandphone})
+}
+
+export const Register = async (req:Request,res:Response) => {
   const { nama, email, password, confPassword, nohandphone } = req.body;
   if (password != confPassword) return res.status(400).json({message: "Password Tidak Sama"})
   const salt = await bcrypt.genSalt();

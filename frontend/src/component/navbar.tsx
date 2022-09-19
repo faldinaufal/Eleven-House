@@ -1,4 +1,5 @@
 import { Navbar, Typography } from "@material-tailwind/react";
+import logo from '../assets/images/Logo.png'
 
 const Nav = () => {
 
@@ -29,15 +30,20 @@ const Nav = () => {
 
   return (
     <div>
-      <Navbar className="mx-auto w-auto py-2 px-4 lg:px-8 lg:py-4 bg-black">
+      <Navbar className="mx-auto w-auto py-1 px-4 lg:px-8 lg:py-1 bg-black">
         <div className="container mx-auto flex items-center justify-between text-white">
           <Typography
             as="a"
-            href="home"
+            href="/home"
             variant="large"
-            className="mr-4 cursor-pointer py-1.5 font-pacifico"
+            className="mr-2 flex items-center cursor-pointer py-1.5 font-pacifico"
           >
-            <span className="text-lg">Eleven House</span>
+            <div className="w-1/12">
+              <img src={logo}/>
+            </div>
+            <div>
+              <span className="text-lg">Eleven House</span>
+            </div>
           </Typography>
           <div className="hidden lg:block">{navList}</div>
         </div>

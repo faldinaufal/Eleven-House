@@ -1,6 +1,6 @@
 import express from "express";
-import { getRumahKos, inputRumahKos, storage } from '../controllers/kosan';
-import { Register, getUsers, Login, Logout } from '../controllers/user';
+import { getKosanInfo, getRumahKos, inputRumahKos, storage } from '../controllers/kosan';
+import { Register, getUsers, Login, Logout, getSingleUsers } from '../controllers/user';
 import { getKamarKos, peyimpanan, inputKamarKos } from '../controllers/kamarkos';
 import multer from "multer";
 import { verifyToken} from '../middleware/verifyToken';
@@ -15,12 +15,14 @@ const router = express.Router()
 
 //kosan
 router.get("/kosan", getRumahKos)
+router.get("/kosan/:namakos", getKosanInfo)
 router.post("/kosan", upload.single('image'), verifyToken, inputRumahKos)
 router.get("/kamar", getKamarKos)
 router.post("/kamar", uploadKamar.single('image'), verifyToken, inputKamarKos)
 
 ///User
 router.get("/users", verifyToken, getUsers)
+router.get("/users/:nama", getSingleUsers)
 router.post("/register", Register)
 
 //authentication

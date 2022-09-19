@@ -1,12 +1,10 @@
-import image1 from "../media/images/image-1.png"
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { list } from "postcss";
 import { Link } from "react-router-dom";
+import { Card, CardHeader, CardBody, Typography } from '@material-tailwind/react';
 
 const Kosan = () => {
   const [rumahKos, setRumahKos] = useState<any[]>([])
-  const [name, setName] = useState('')
 
   useEffect(()=> {
     getRumahKos()
@@ -18,19 +16,26 @@ const Kosan = () => {
   }
 
   return (
-    <div>
-      <div className="md:grid grid-cols-3 gap-x-20 pt-12 pb-10 gap-y-6  ">
-          {rumahKos && rumahKos.map((list) => (
-            <Link to={`/kosan/${list.namakos}`}>
-              <div className='box border-4 rounded-xl w-96 p-2 text-center'>
-                <img src={list.image} alt="" />
-                <div className="pt-2">
+    <div className='grid grid-cols-3 mt-10 justify-items-center gap-y-10'>
+      {rumahKos && rumahKos.map((list) => (
+          <Link to={`/kosan/${list.namakos}`}>
+             <Card className='items-center pt-10 w-96'>
+              <CardHeader className='w-80'>
+                <Typography>
+                  <img src={list.image}/>
+                </Typography>
+              </CardHeader>
+              <CardBody className='text-center'>
+                <Typography>
                   <label className="font-rubik font-bold">{list.namakos}</label>
-                </div>
-              </div>
-            </Link>
-          ))} 
-      </div>
+                </Typography>
+                <Typography>
+                  <label className="font-rubik font-bold">{list.alamatkos}</label>
+                </Typography>
+              </CardBody>
+             </Card>
+          </Link>
+      ))} 
     </div>
   )
 }

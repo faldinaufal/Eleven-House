@@ -59,8 +59,18 @@ export const inputRumahKos = async (req:Request, res:Response) => {
   }
 }
 
-export const updateRumahKos = async (req:Request, res:Response) => {
-
+export const getKosanInfo = async (req:Request, res:Response) => {
+  const kosan = await RumahKos.findOne({
+    where: {
+      namakos : req.params.namakos
+    }
+  })
+  if(!kosan) return res.status(404).json({message: "Kosan tidak ada"})
+  const name = kosan.namakos
+  const address = kosan.alamatkos
+  const detail = kosan.deskripsikos
+  const image = kosan.image
+  res.json({name,address,detail,image})
 }
 
 export const deleteRumahKos = async (req:Request, res:Response) => {
