@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import { Login, Home, Register, Dashboard, Inputkosan, KosanPage, Profil } from './pages';
+import { Login, Home, Register, Dashboard, Inputkosan, KosanPage, Profil, AddKamarKos } from './pages';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +13,7 @@ const App: React.FC = () => {
         <Route path="/kosan/:namakos" element={<KosanPage/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path="/inputkos" element={<Inputkosan/>}/>
+        <Route path="/kosan/:namakos/inputkamarkos" element={<AddKamarKos/>}/>
         <Route/>
       </Routes>
     </BrowserRouter>

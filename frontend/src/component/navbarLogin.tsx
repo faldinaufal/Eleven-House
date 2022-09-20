@@ -2,7 +2,7 @@ import { Navbar, Typography } from "@material-tailwind/react";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import logo from '../assets/images/Logo.png'
+import logo from '../assets/images/Logo1x1.png'
 
 const Nav = () => {
   const navigate = useNavigate()
@@ -68,7 +68,7 @@ const Nav = () => {
           className="mr-2 flex items-center cursor-pointer py-1.5 font-pacifico"
         >
           <div className="w-1/12">
-            <img src={logo}/>
+            <img className="w-9/12" src={logo} alt=""/>
           </div>
           <div>
             <span className="text-lg">Eleven House</span>

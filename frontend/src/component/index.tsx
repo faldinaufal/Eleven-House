@@ -6,5 +6,6 @@ import KamarKos from "./kamarkosan"
 import InputKos from "./inputKos"
 import NavbarLogin from "./navbarLogin"
 import UserProfile from "./profilUser"
+import AddRoom from "./inputKamarKos"
 
-export { Login, Navbar, ViewKosan, InfoKos, KamarKos, InputKos, NavbarLogin, UserProfile }
+export { Login, Navbar, ViewKosan, InfoKos, KamarKos, InputKos, NavbarLogin, UserProfile, AddRoom }

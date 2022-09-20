@@ -1,9 +1,12 @@
 import { InfoKos, Navbar, NavbarLogin } from "../../component"
 import { useState, useEffect } from 'react';
+import { Button } from "@material-tailwind/react";
 import axios from 'axios';
+import { useParams, Link } from 'react-router-dom';
 
 const KosanPage = () => {
   const [role, setRole] = useState("")
+  let { namakos } = useParams()
 
   useEffect(() => {
     Auth()
@@ -22,6 +25,13 @@ const KosanPage = () => {
       <div>
         <NavbarLogin/>
         <InfoKos/>
+        <div className='container relative'>
+          <div className='absolute right-0 -bottom-24 pb-10'>
+            <Link to={`/kosan/${namakos}/inputkamarkos`}>
+              <Button color='green'>Tambah Kamar Kos</Button>
+            </Link>
+          </div>
+        </div>
       </div>
     )
   }
