@@ -2,7 +2,7 @@ import { KamarInfo, NavAdmin, Navbar, NavbarLogin } from "../../component"
 import { useState, useEffect } from 'react';
 import { Button } from "@material-tailwind/react";
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const KamarPage = () => {
   let { id } = useParams()
@@ -11,7 +11,6 @@ const KamarPage = () => {
   const [userId, setUserId] = useState("")
   const [username, setUsername] = useState("")
   const [msg, setMsg] = useState("")
-  const navigate = useNavigate()
   useEffect(() => {
     Auth()
   })

@@ -36,6 +36,7 @@ const UserProfile = () => {
         <p className='pt-2'>: {email}</p>
         <p className='pt-2'>: {noHP}</p>
       </div>
+      <p>{msg}</p>
     </div>
   )
 }

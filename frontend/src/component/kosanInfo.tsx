@@ -15,7 +15,7 @@ const KosanInfo = () => {
   useEffect(()=> {
     getRumahKosInfo()
     getKamarKos() 
-  },[])
+  },[kosId])
 
   const getRumahKosInfo = async () => {
     try {
@@ -31,7 +31,7 @@ const KosanInfo = () => {
     }
   }
   
-  const getKamarKos = async () => {
+  const getKamarKos = () => {
     axios.get(`http://localhost:4000/api/kamar/${kosId}`).then((res) => {
       console.log(res.data)
       setRoom(res.data)

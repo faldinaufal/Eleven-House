@@ -1,4 +1,4 @@
-import { AddRoom, NavAdmin, NavbarLogin } from '../../component'
+import { AddRoom, NavAdmin } from '../../component'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';

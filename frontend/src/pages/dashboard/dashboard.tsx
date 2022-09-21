@@ -1,4 +1,4 @@
-import { NavAdmin, Navbar, NavbarLogin, ViewKosan } from '../../component'
+import { NavAdmin, Navbar, NavbarLogin, ViewKosan, WaPopUp } from '../../component'
 import { Button } from '@material-tailwind/react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -43,6 +43,7 @@ const Dashboard = () => {
         <div className='container'>
           <ViewKosan/>
         </div>
+        <WaPopUp/>
       </div>
     )
   }
@@ -53,6 +54,7 @@ const Dashboard = () => {
       <div className='container'>
         <ViewKosan/>
       </div>
+      <WaPopUp/>
     </div>
   )
 }

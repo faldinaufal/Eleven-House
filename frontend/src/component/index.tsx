@@ -8,5 +8,6 @@ import UserProfile from "./profilUser"
 import AddRoom from "./inputKamarKos"
 import KamarInfo from "./viewKamar"
 import NavAdmin from "./navbarAdmin"
+import WaPopUp from "./wapopup"
 
-export { Login, Navbar, ViewKosan, InfoKos, InputKos, NavbarLogin, UserProfile, AddRoom, KamarInfo, NavAdmin }
+export { Login, Navbar, ViewKosan, InfoKos, InputKos, NavbarLogin, UserProfile, AddRoom, KamarInfo, NavAdmin, WaPopUp }

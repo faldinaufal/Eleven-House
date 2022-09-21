@@ -1,4 +1,4 @@
-import { InputKos, NavAdmin, NavbarLogin } from '../../component'
+import { InputKos, NavAdmin } from '../../component'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
