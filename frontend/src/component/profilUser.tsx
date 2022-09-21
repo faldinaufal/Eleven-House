@@ -14,7 +14,7 @@ const UserProfile = () => {
 
   const getUserProfile = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/users/${nama}`)
+      const response = await axios.get(`http://localhost:4000/api/users/${nama}`)
       setEmail(response.data.email)
       setNoHP(response.data.nohandphone)
     } catch(error: any) {
@@ -24,7 +24,7 @@ const UserProfile = () => {
     }
   }
   return (
-    <div className='container grid grid-cols-10 border-2 p-4 mt-8 font-rubik'>
+    <div className='container grid grid-cols-10 border-2 p-4 mt-8 font-rubik bg-white'>
       <h1 className='text-3xl col-span-4'>Profil Saya </h1>
       <div className='col-start-1 col-span-2 text-xl pt-3'>
         <p className='pt-2'>Nama</p>

@@ -11,7 +11,7 @@ const app = express()
 app.use(cors({
   credentials: true, 
   origin: ['http://localhost:3000'], 
-  methods: ["GET", "POST", "UPDATE", "DELETE"]
+  methods: ["GET", "POST", "PATCH", "DELETE"]
 }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))

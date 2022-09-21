@@ -32,7 +32,7 @@ filename: (
 export const getRumahKos = async(req:Request, res:Response) => {
   try {
     const rumahkos = await RumahKos.findAll({
-      attributes: ['namakos', 'alamatkos', 'deskripsikos' ,'image']
+      attributes: ['namakos', 'alamatkos', 'deskripsikos' ,'image', 'id']
     });
     res.json(rumahkos)
   } catch (error:any) {
@@ -66,11 +66,12 @@ export const getKosanInfo = async (req:Request, res:Response) => {
     }
   })
   if(!kosan) return res.status(404).json({message: "Kosan tidak ada"})
+  const kosId = kosan.id
   const name = kosan.namakos
   const address = kosan.alamatkos
   const detail = kosan.deskripsikos
   const image = kosan.image
-  res.json({name,address,detail,image})
+  res.json({kosId, name,address,detail,image})
 }
 
 export const deleteRumahKos = async (req:Request, res:Response) => {

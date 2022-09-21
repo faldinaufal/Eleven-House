@@ -1,4 +1,4 @@
-import { InputKos, NavbarLogin } from '../../component'
+import { InputKos, NavAdmin, NavbarLogin } from '../../component'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ const Inputkosan = () => {
 
   const Auth = async () => {
     try {
-      const auth = await axios.get('http://localhost:4000/auth')
+      const auth = await axios.get('http://localhost:4000/api/auth')
       setRole(auth.data.role)
     } catch (error:any) {
       console.log(error)
@@ -25,7 +25,7 @@ const Inputkosan = () => {
 
   return(
     <div>
-      <NavbarLogin/>
+      <NavAdmin/>
       <InputKos/>
     </div>
   )

@@ -9,6 +9,8 @@ const AddRoom = () => {
   const [image, setImage] = useState("")
   const [msg, setMsg] = useState("")
   const [token, setToken] = useState('')
+  const [price, setPrice] = useState('')
+  const [kosId, setKosId] = useState()
   const navigate = useNavigate()
   let {namakos} = useParams()
 
@@ -16,10 +18,25 @@ const AddRoom = () => {
     refreshToken()
   })
 
+  useEffect(() => {
+    getKosan()
+  })
+
   const refreshToken = async() => {
     try {
-      const response = await axios.get('http://localhost:4000/kamar')
+      const response = await axios.get('http://localhost:4000/token')
       setToken(response.data.accessToken)
+    } catch (error:any) {
+      if (error.response) {
+        navigate('/home')
+      }
+    }
+  }
+
+  const getKosan = async() => {
+    try {
+      const response = await axios.get(`http://localhost:4000/api/kosan/${namakos}`,)
+      setKosId(response.data.kosId)
     } catch (error:any) {
       if (error.response) {
         navigate('/home')
@@ -34,13 +51,15 @@ const AddRoom = () => {
 
   const addRoom = () => {
     let formData = new FormData();
-    formData.append("name", name)
+    formData.append("nama", name)
+    formData.append("harga", price)
     formData.append("detail", detail)
     formData.append("image", image)
+    formData.append("kosId", kosId!)
 
     axios({
       method: "post",
-      url: "http://localhost:4000/kosan",
+      url: "http://localhost:4000/api/kamar",
       data : formData,
       headers: { 
         "Content-Type": "multipart/form-data",
@@ -62,6 +81,15 @@ const AddRoom = () => {
             label='Nama Kamar'
             onChange={(e) => {
               setName(e.target.value)
+            }}
+          />
+        </div>
+        <div className='pb-4'>
+          <Input 
+            type={'form'}
+            label='Harga'
+            onChange={(e) => {
+              setPrice(e.target.value)
             }}
           />
         </div>

@@ -1,4 +1,4 @@
-import { AddRoom, NavbarLogin } from '../../component'
+import { AddRoom, NavAdmin, NavbarLogin } from '../../component'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ const AddKamarKos = () => {
 
   const Auth = async () => {
     try {
-      const auth = await axios.get('http://localhost:4000/auth')
+      const auth = await axios.get('http://localhost:4000/api/auth')
       setRole(auth.data.role)
     } catch (error:any) {
       console.log(error)
@@ -25,7 +25,7 @@ const AddKamarKos = () => {
 
   return(
     <div>
-      <NavbarLogin/>
+      <NavAdmin/>
       <AddRoom/>
     </div>
   )

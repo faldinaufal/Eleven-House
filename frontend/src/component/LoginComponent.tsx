@@ -12,7 +12,7 @@ const LoginComponent = () => {
   const Authentication = async(event:any) => {
     event.preventDefault()
     try {
-      await axios.post('http://localhost:4000/login', {
+      await axios.post('http://localhost:4000/api/login', {
         email: email,
         password: password,
       }, {withCredentials:true})

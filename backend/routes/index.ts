@@ -1,7 +1,7 @@
 import express from "express";
 import { getKosanInfo, getRumahKos, inputRumahKos, storage } from '../controllers/kosan';
 import { Register, getUsers, Login, Logout, getSingleUsers } from '../controllers/user';
-import { getKamarKos, peyimpanan, inputKamarKos } from '../controllers/kamarkos';
+import { getKamarKos, peyimpanan, inputKamarKos, getKamarKosByKosID, getKamarByID, UpdateKamar, getKamarByStatus } from '../controllers/kamarkos';
 import multer from "multer";
 import { verifyToken} from '../middleware/verifyToken';
 import { RefreshToken } from "../controllers/refreshToken";
@@ -14,22 +14,26 @@ const uploadKamar = multer({
 const router = express.Router()
 
 //kosan
-router.get("/kosan", getRumahKos)
-router.get("/kosan/:namakos", getKosanInfo)
-router.post("/kosan", upload.single('image'), verifyToken, inputRumahKos)
-router.get("/kamar", getKamarKos)
-router.post("/kamar", uploadKamar.single('image'), verifyToken, inputKamarKos)
+router.get("/api/kosan", getRumahKos)
+router.get("/api/kosan/:namakos", getKosanInfo)
+router.post("/api/kosan", upload.single('image'), verifyToken, inputRumahKos)
+router.get("/api/kamar/:kosanId", getKamarKosByKosID)
+router.get("/api/room/:id", getKamarByID)
+router.get("/api/room/status/:status", getKamarByStatus)
+router.get("/api/kamar", getKamarKos)
+router.patch("/api/room/:id", UpdateKamar)
+router.post("/api/kamar", uploadKamar.single('image'), verifyToken, inputKamarKos)
 
 ///User
-router.get("/users", verifyToken, getUsers)
-router.get("/users/:nama", getSingleUsers)
-router.post("/register", Register)
+router.get("/api/users", verifyToken, getUsers)
+router.get("/api/users/:nama", getSingleUsers)
+router.post("/api/register", Register)
 
 //authentication
-router.post("/login", Login)
-router.delete("/logout", Logout)
-router.get("/token", RefreshToken)
-router.get("/auth", authentication)
+router.post("/api/login", Login)
+router.delete("/api/logout", Logout)
+router.get("/api/token", RefreshToken)
+router.get("/api/auth", authentication)
 
 // router.post("/test", getUsersByEmail)
 

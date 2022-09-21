@@ -19,7 +19,7 @@ const InputKos = () => {
 
   const refreshToken = async() => {
     try {
-      const response = await axios.get('http://localhost:4000/token')
+      const response = await axios.get('http://localhost:4000/api/token')
       setToken(response.data.accessToken)
     } catch (error:any) {
       if (error.response) {

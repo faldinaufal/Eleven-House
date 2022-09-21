@@ -11,13 +11,14 @@ export const authentication = async (req:Request, res:Response) => {
       }
     })
     if(!user[0]) return res.sendStatus(403)
+    const userId = user[0].id
     const name = user[0].nama
     const email = user[0].email
     const nohandphone = user[0].nohandphone
     const role = user[0].role
     const token = user[0].refreshToken
     
-    res.json({name, email,nohandphone,role,token})
+    res.json({userId, name, email,nohandphone,role,token})
   } catch (error) {
     console.log(error)
   }

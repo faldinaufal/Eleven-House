@@ -9,11 +9,11 @@ const Kosan = () => {
   useEffect(()=> {
     getRumahKos()
   },[])
-
+ 
   const getRumahKos = async () => {
-    const response = await axios.get("http://localhost:4000/kosan")
+    const response = await axios.get("http://localhost:4000/api/kosan")
     setRumahKos(response.data)
-  }
+  } 
 
   return (
     <div className='grid grid-cols-3 mt-10 justify-items-center gap-y-10'>
@@ -27,10 +27,10 @@ const Kosan = () => {
               </CardHeader>
               <CardBody className='text-center'>
                 <Typography>
-                  <label className="font-rubik font-bold">{list.namakos}</label>
+                  <label className="font-rubik font-black text-lg">{list.namakos}</label>
                 </Typography>
                 <Typography>
-                  <label className="font-rubik font-bold">{list.alamatkos}</label>
+                  <label className="font-rubik">{list.alamatkos}</label>
                 </Typography>
               </CardBody>
              </Card>

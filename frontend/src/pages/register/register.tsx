@@ -16,7 +16,7 @@ const Register = () => {
   const Registration = async(event:any) => {
     event.preventDefault()
     try {
-      await axios.post('http://localhost:4000/register', {
+      await axios.post('http://localhost:4000/api/register', {
         nama: nama,
         email: email,
         password: password,

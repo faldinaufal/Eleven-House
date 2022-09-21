@@ -44,7 +44,6 @@ export class KamarKos extends Model {
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    unique: true
   })
   namakamar!: string
 
@@ -77,7 +76,7 @@ export class KamarKos extends Model {
     type: DataType.INTEGER,
     allowNull: true,
   })
-  rumahkosId!: number;
+  kosanId!: number;
 
   @BelongsTo(() => RumahKos)
   rumah! : RumahKos
@@ -86,6 +85,19 @@ export class KamarKos extends Model {
   @Column({
     type: DataType.INTEGER,
     allowNull: true,
+    unique: true
   })
   userId!: number;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  namauser!: string
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  namakosan!: string
 }

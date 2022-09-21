@@ -1,4 +1,4 @@
-import { InfoKos, Navbar, NavbarLogin } from "../../component"
+import { InfoKos, Navbar, NavbarLogin, NavAdmin } from "../../component"
 import { useState, useEffect } from 'react';
 import { Button } from "@material-tailwind/react";
 import axios from 'axios';
@@ -14,7 +14,7 @@ const KosanPage = () => {
 
   const Auth = async () => {
     try {
-      const auth = await axios.get('http://localhost:4000/auth', {withCredentials: true})
+      const auth = await axios.get('http://localhost:4000/api/auth', {withCredentials: true})
       setRole(auth.data.role)
     } catch (error:any) {
       console.log(error)
@@ -23,7 +23,7 @@ const KosanPage = () => {
   if(role === "ADMIN") {
     return (
       <div>
-        <NavbarLogin/>
+        <NavAdmin/>
         <InfoKos/>
         <div className='container relative'>
           <div className='absolute right-0 -bottom-24 pb-10'>

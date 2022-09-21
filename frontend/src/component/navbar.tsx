@@ -7,7 +7,6 @@ const Nav = () => {
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
-        variant="large"
         color="white"
         className="p-1 font-normal"
       >
@@ -17,7 +16,6 @@ const Nav = () => {
       </Typography>
       <Typography
         as="li"
-        variant="large"
         color="white"
         className="p-1 font-normal"
       >
@@ -35,7 +33,6 @@ const Nav = () => {
           <Typography
             as="a"
             href="/home"
-            variant="large"
             className="mr-2 flex items-center cursor-pointer py-1.5 font-pacifico"
           >
             <div className="w-1/12">
