@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavAdmin } from '../../component';
-import { useParams } from 'react-router-dom';
 import { Button } from '@material-tailwind/react';
 
 const Submit = () => {
-  let { namakos } = useParams()
-  const [address, setAddress] = useState("")
-  const [detail, setDetail] = useState("")
-  const [image, setImage] = useState("")
-  const [kosId, setKosId] = useState()
   const [msg, setMsg] = useState("")
   const [room, setRoom] = useState<any[]>([])
 
