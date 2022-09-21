@@ -77,6 +77,7 @@ const InputKos = () => {
         </div>
         <div className='pb-4'>
           <Input 
+            type={"form"}
             label='Keterangan'
             onChange={(e) => {
               setDetail(e.target.value)

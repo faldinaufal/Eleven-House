@@ -9,7 +9,6 @@ Fungsi - fungsi nya tersebut di jabarkan sebagai berikut :
 - Tenant / penghuni kos
   -mendaftar dan menerima info tentang kamar yang ingin di tempati
   -dapat memilih kamar yang di inginkan
-  -penghuni kos dapat membayar uang kos langsung dari aplikasi ini
   -ada nya notifikasi tentang waktu pembayaran uang kos yang telah jatuh tempo.
   -adanya fitur chat atau contact person penjaga kosan dan pemilik kosan yang bisa membantu penghuni kos untuk menghubungi penjaga kosan atau pemilik dalam keadaan tertentu
   -setelah 10 hari jatuh tempo jika penghuni kos tidak membayar uang kos maka akun akan di suspend sementara hingga di aktifkan kembali oleh admin atau sub-admin setelah membayar.

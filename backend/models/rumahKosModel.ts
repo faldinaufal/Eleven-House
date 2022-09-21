@@ -58,13 +58,19 @@ export class KamarKos extends Model {
     type: DataType.STRING,
     allowNull: true,
   })
+  harga!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   image!: string;
 
   @Column({
-    type: DataType.BOOLEAN,
+    type: DataType.STRING,
     allowNull: true,
   })
-  status!: boolean;
+  status!: string;
 
   @ForeignKey(() => RumahKos)
   @Column({
