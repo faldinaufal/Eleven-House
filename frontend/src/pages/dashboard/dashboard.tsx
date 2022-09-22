@@ -26,7 +26,7 @@ const Dashboard = () => {
           <ViewKosan/>
         </div>
         <div className='container relative'>
-          <div className='absolute right-0 -bottom-10'>
+          <div className='absolute right-0 -bottom-20'>
             <a href="/inputKos">
               <Button color='green'>Tambah Rumah Kos</Button>
             </a>

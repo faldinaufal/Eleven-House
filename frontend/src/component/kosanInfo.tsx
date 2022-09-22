@@ -71,7 +71,7 @@ const KosanInfo = () => {
             <th className="border-2 border-gray-500 px-4">Penghuni</th>
             <th className="border-2 border-gray-500 px-4"></th>
           </thead>
-          <tbody> 
+          <tbody>
             {room && room.map((list, index) => (
               <tr>
               <td className="border-2 border-gray-500 px-4">{index+1}</td>
@@ -79,10 +79,13 @@ const KosanInfo = () => {
                 <td className="border-2 border-gray-500 px-4">{list.status}</td>
                 <td className="border-2 border-gray-500 px-4">{list.namauser}</td>
                 <td className="border-2 border-gray-500 px-4 py-1">
-                  <Link to={`/kosan/${namakos}/kamar/${list.id}`}>
-                    <Button>Cek Kamar</Button>
-                  </Link>
-                </td>
+                  {
+                    list.status === 'Tersedia'  &&
+                    <Link to={`/kosan/${namakos}/kamar/${list.id}`}>
+                      <Button>Cek Kamar</Button>
+                    </Link>
+                  }
+                </td> 
               </tr>
             ))}
           </tbody>
