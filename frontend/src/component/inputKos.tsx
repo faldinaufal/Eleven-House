@@ -42,7 +42,7 @@ const InputKos = () => {
 
     axios({
       method: "post",
-      url: "http://localhost:4000/kosan",
+      url: "http://localhost:4000/api/kosan",
       data : formData,
       headers: { 
         "Content-Type": "multipart/form-data",

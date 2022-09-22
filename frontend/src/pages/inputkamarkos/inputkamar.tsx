@@ -17,11 +17,11 @@ const AddKamarKos = () => {
       console.log(error)
     }
   }
-  if(role === "USER") {
-    return (
-      <Navigate to="/home"/>
-    )
-  }
+  // if(role === "USER") {
+  //   return (
+  //     // <Navigate to="/home"/>
+  //   )
+  // }
 
   return(
     <div>

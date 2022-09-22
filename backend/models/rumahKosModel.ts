@@ -91,13 +91,13 @@ export class KamarKos extends Model {
 
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
   namauser!: string
 
   @Column({
     type: DataType.STRING,
-    allowNull: false,
+    allowNull: true,
   })
   namakosan!: string
 }

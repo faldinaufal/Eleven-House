@@ -24,7 +24,7 @@ const AddRoom = () => {
 
   const refreshToken = async() => {
     try {
-      const response = await axios.get('http://localhost:4000/token')
+      const response = await axios.get('http://localhost:4000/api/token')
       setToken(response.data.accessToken)
     } catch (error:any) {
       if (error.response) {
@@ -49,9 +49,31 @@ const AddRoom = () => {
     setImage(uploaded)
   }
 
-  const addRoom = () => {
+  // const addRoom = () => {
+  //   let formData = new FormData();
+  //   formData.append("nama", name)
+  //   formData.append("harga", price)
+  //   formData.append("detail", detail)
+  //   formData.append("image", image)
+  //   formData.append("kosId", kosId!)
+
+  //   axios({
+  //     method: "post",
+  //     url: "http://localhost:4000/api/kamar",
+  //     data : formData,
+  //     headers: { 
+  //       "Content-Type": "multipart/form-data",
+  //       "Authorization" : `Bearer ${token}`
+  //     }
+  //   }).then((res:any) =>{
+  //     setMsg(res.data.message)
+  //   }).catch((error:any) => {
+  //     setMsg(error.response.data.message)
+  //   })
+  // }
+  const tambahKamar = () => {
     let formData = new FormData();
-    formData.append("nama", name)
+    formData.append("name", name)
     formData.append("harga", price)
     formData.append("detail", detail)
     formData.append("image", image)
@@ -74,8 +96,8 @@ const AddRoom = () => {
 
   return (
     <div className='container pt-8 md:max-w-screen-sm'>
-      <div className='text-center text-2xl'>
-        <h1>Tambah Kamar di Kos {namakos}</h1>
+      <div className='text-center text-2xl border-2 p-10 rounded-2xl bg-white'>
+        <h1 className='-mt-3 pb-4'>Tambah Kamar di Kos {namakos}</h1>
         <div className='pb-4'>
           <Input 
             label='Nama Kamar'
@@ -109,8 +131,8 @@ const AddRoom = () => {
           />
         </div>
       </div>
-      <div>
-          <Button onClick={addRoom}>Tambahkan</Button>
+      <div className='pt-6'>
+          <Button onClick={tambahKamar}>Tambahkan</Button>
       </div>
       <div className='text-center pt-6 text-red-600 text-lg font font-medium'>
         <p>{msg}</p>

@@ -66,13 +66,16 @@ export const getKamarKos = async(req:Request, res:Response) => {
 }
 
 export const inputKamarKos = async (req:Request, res:Response) => {
-  const {nama, detail, harga, kosId  } = req.body
+  const namakamar = req.body.name
+  const deskripsikamar = req.body.detail
+  const harga = req.body.harga
+  const kosId = req.body.kosId
   
   let finalImageURL = req.protocol + '://' + req.get('host') + '/images/RoomImages/' + req.file?.filename 
   try {
     await KamarKos.create({
-      namakamar : nama,
-      deskripsikamar : detail,
+      namakamar : namakamar,
+      deskripsikamar : deskripsikamar,
       harga : harga,
       kosanId : kosId,
       status : "Tersedia",
