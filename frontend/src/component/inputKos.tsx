@@ -57,8 +57,8 @@ const InputKos = () => {
 
   return (
     <div className='container pt-8 md:max-w-screen-sm'>
-      <div className='text-center text-2xl'>
-        <h1>Tambah Rumah Kos</h1>
+      <div className='text-center text-2xl border-2 p-10 rounded-2xl bg-white'>
+        <h1 className='-mt-3 pb-4'>Tambah Rumah Kos</h1>
         <div className='pb-4'>
           <Input 
             label='Nama Kos'
@@ -91,7 +91,7 @@ const InputKos = () => {
           />
         </div>
       </div>
-      <div>
+      <div className='pt-6'>
           <Button onClick={addHouse}>Tambahkan</Button>
       </div>
       <div className='text-center pt-6 text-red-600 text-lg font font-medium'>
