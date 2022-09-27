@@ -33,6 +33,17 @@ const Submit = () => {
       setMsg(error.response.data.message)
     }
   }
+
+  const Cancel = async(e:any) => {
+    try {
+      await axios.patch(`http://localhost:4000/api/room/${e}`, { status: 'Tersedia', userId : null, namauser: null, namakosan: null}).then((res) => {
+        console.log(res)
+      })
+      window.location.reload();
+    } catch (error:any) {
+      setMsg(error.response.data.message)
+    }
+  }
   return (
     <div>
       <NavAdmin/>
@@ -57,6 +68,9 @@ const Submit = () => {
                   <td className="border-2 border-gray-500 px-4">{list.namauser}</td>
                   <td className="border-2 border-gray-500 px-4 py-1">
                       <Button onClick={()=>Submit(list.id)}>Setuju</Button>
+                  </td>
+                  <td className="border-2 border-gray-500 px-4 py-1">
+                      <Button onClick={()=>Cancel(list.id)}  color="red">Tolak</Button>
                   </td>
                 </tr>
               ))}
